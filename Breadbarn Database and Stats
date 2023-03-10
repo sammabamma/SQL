@@ -1,0 +1,32 @@
+--Create bread store database
+
+
+CREATE TABLE breadbarn (item INTEGER PRIMARY KEY, grain TEXT, slices INTEGER, price INTEGER, quantity INTEGER);
+
+INSERT INTO breadbarn VALUES (1, 'wheat', 10, 4.99, 7);
+INSERT INTO breadbarn VALUES (2, 'sourdough', 10, 6.99, 3);
+INSERT INTO breadbarn VALUES (3, 'pumpernickel', 8, 4.99, 10);
+INSERT INTO breadbarn VALUES (4, 'sweet', 8, 2.99, 12);
+INSERT INTO breadbarn VALUES (5, 'rye', 10, 3.99, 6);
+INSERT INTO breadbarn VALUES (6, 'cinnamon swirl', 12, 5.99, 4);
+INSERT INTO breadbarn VALUES (7, ' 7 grain', 10 , 6.99,  2);
+INSERT INTO breadbarn VALUES (8, 'chocolate chip' , 12, 8.99, 5);
+INSERT INTO breadbarn VALUES (9, 'sprouted', 10, 5.99, 1);
+INSERT INTO breadbarn VALUES (10, 'wheatberry', 8, 5.99, 3);
+INSERT INTO breadbarn VALUES (11, 'cinnamon chocolate chip', 12, 8.99, 6);
+INSERT INTO breadbarn VALUES (12, 'grain free',8, 7.99, 4);
+INSERT INTO breadbarn VALUES (13, ' amish friendship', 10, 4.99, 5);
+INSERT INTO breadbarn VALUES (14, 'challah', 8, 6.99,3);
+INSERT INTO breadbarn VALUES (15, 'pita',3,  2.99, 5);
+
+
+--Display the databse ordered by price
+SELECT * from breadbarn
+ORDER BY price;
+
+--what is the max price for a loaf of bread?
+SELECT MAX(price) FROM breadbarn;
+
+--what are the top three least available bread types?
+SELECT * from breadbarn
+ORDER BY quantity limit 3;
